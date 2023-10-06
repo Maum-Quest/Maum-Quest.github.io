@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import data from "../../domain/repository/AnimalPersonailty"
+import "./AnimalPersonality.css"
 
 const AnimalPersonality = () => {
   const [idx, setIdx] = useState(0)
@@ -7,18 +8,22 @@ const AnimalPersonality = () => {
     setIdx((prevIdx) => prevIdx + 1)
   }
   return (
-    <div>
+    <div className="Quest-body">
       {idx < data.length ? (
         <>
-          <div>{data[idx].question}</div>
+          <div className="question">{data[idx].question}</div>
           <div>
             {data[idx].answers.map((answer) => {
-              return <div onClick={() => onNext()}>{answer.content}</div>
+              return (
+                <div className="answer" onClick={() => onNext()}>
+                  {answer.content}
+                </div>
+              )
             })}
           </div>
         </>
       ) : (
-        <p> Result </p>
+        <div className="Quest-result"> Result </div>
       )}
     </div>
   )

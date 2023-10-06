@@ -1,6 +1,6 @@
 const data = [
   {
-    question: "1번 질문 ?",
+    question: "1번 질문 좀 길게 써봅시당 길게길게길게길게? 아주아주아주아주아주 길게 ~~~~~ 길게 ~~~~",
     answers: [
       {
         content: "쿨쿨쿨",

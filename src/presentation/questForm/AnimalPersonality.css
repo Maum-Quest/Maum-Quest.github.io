@@ -1,0 +1,26 @@
+.Quest-body {
+  border: solid 1px black;
+  max-height: 80vh;
+  min-height: 80vh;
+  max-width: 100vw;
+  min-width: 10rem;
+}
+
+.Quest-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid 1px black;
+}
+
+.answer {
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border: solid 1px black;
+}
+
+.Quest-result {}
