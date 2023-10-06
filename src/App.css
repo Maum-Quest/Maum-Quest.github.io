@@ -12,9 +12,20 @@ html {
 }
 
 .App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-self: baseline;
-  padding: 0.3rem 1rem;
   border: solid 1px black;
+  width: 100vw;
+}
+
+.App-header > div, img {
+  margin: 0.3rem 1rem
+}
+
+.Github-logo {
+  height: 1rem;
 }
 
 .Test-start-link {
