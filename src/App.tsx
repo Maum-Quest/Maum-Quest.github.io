@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">마음 퀘스트</header>
+      <div className="Test-main-img">심리테스트 시작화면 이미지</div>
+      <a className="Test-start-link" href="/" rel="noopener noreferrer">
+        테스트 하러가기
+      </a>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
