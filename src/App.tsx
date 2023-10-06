@@ -7,7 +7,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>마음 퀘스트</div>
-        <img className="Github-logo" src={githubLogo} />
+        <img
+          className="Github-logo"
+          src={githubLogo}
+          onClick={() =>
+            window.open("https://github.com/hon9g/personality-test")
+          }
+        />
       </header>
       <img
         className="Test-main-img"
