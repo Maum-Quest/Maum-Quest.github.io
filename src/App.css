@@ -26,5 +26,8 @@ html {
 
 .Test-main-img {
   border: solid 1px black;
+  max-height: 80vh;
   min-height: 80vh;
+  max-width: 100vw;
+  min-width: 10rem;
 }
