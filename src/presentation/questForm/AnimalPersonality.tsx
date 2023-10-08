@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import data from "../../domain/repository/AnimalPersonailty"
+import QuestService, { PersonalityAnswer } from "../../domain/entity/Quest"
 import "./AnimalPersonality.css"
 
 const AnimalPersonality = () => {
@@ -7,6 +8,13 @@ const AnimalPersonality = () => {
   const onNext = () => {
     setIdx((prevIdx) => prevIdx + 1)
   }
+  const [userAnswers, setUserAnswers] = useState<PersonalityAnswer[]>([])
+  const [result, setResult] = useState("")
+  useEffect(() => {
+    if (idx === data.length) {
+      setResult(QuestService.getResult(userAnswers))
+    }
+  }, [idx])
   return (
     <div className="Quest-body">
       {idx < data.length ? (
@@ -15,7 +23,16 @@ const AnimalPersonality = () => {
           <div>
             {data[idx].answers.map((answer) => {
               return (
-                <div className="answer" onClick={() => onNext()}>
+                <div
+                  className="answer"
+                  onClick={() => {
+                    setUserAnswers((prev) => [
+                      ...prev,
+                      answer as PersonalityAnswer,
+                    ])
+                    onNext()
+                  }}
+                >
                   {answer.content}
                 </div>
               )
@@ -23,7 +40,17 @@ const AnimalPersonality = () => {
           </div>
         </>
       ) : (
-        <div className="Quest-result"> Result </div>
+        <div className="Quest-result">
+          <p>
+            {userAnswers.map(
+              (answer) => `
+              type: ${answer.content}, level: ${answer.level}
+              \n .
+              `
+            )}
+          </p>
+          <p>{result}</p>
+        </div>
       )}
     </div>
   )
