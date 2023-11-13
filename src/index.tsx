@@ -5,15 +5,22 @@ import "./index.css"
 import App from "./App"
 import RandomGift from "./presentation/questForm/RandomGift"
 import reportWebVitals from "./reportWebVitals"
+import Main from "./presentation/component/Main"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "pick-gift-random",
-    element: <RandomGift />,
+    children: [
+      {
+        index: true,
+        element: <Main />,
+      },
+      {
+        path: "pick-gift-random",
+        element: <RandomGift />,
+      },
+    ],
   },
 ])
 

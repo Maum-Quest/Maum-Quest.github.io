@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import { Outlet } from "react-router-dom"
 import AnimalPersonalityQuestForm from "./presentation/questForm/AnimalPersonality"
 import githubLogo from "./github-logo.svg"
 import "./App.css"
 
 function App() {
-  const [isStart, setStart] = useState(false)
   return (
     <div className="App">
       <header className="App-header">
@@ -17,19 +16,7 @@ function App() {
           }
         />
       </header>
-      {!isStart ? (
-        <>
-          <img
-            className="Test-main-img"
-            src="https://user-images.githubusercontent.com/26381972/273206989-24da237c-8553-4edc-9916-0f8772dcdddd.png"
-          />
-          <a className="Test-start-link" onClick={() => setStart(true)}>
-            테스트 하러가기
-          </a>
-        </>
-      ) : (
-        <AnimalPersonalityQuestForm />
-      )}
+      <Outlet />
     </div>
   )
 }
