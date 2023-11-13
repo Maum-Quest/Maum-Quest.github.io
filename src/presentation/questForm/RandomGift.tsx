@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const gifts = [
   {
     name: "곰인형",
@@ -261,7 +263,7 @@ const getRandomIndex = (maxIndex: number) =>
   Math.floor(Math.random() * maxIndex)
 
 const RandomGift = () => {
-  const idx = getRandomIndex(gifts.length)
+  const [idx, setIdx] = useState(getRandomIndex(gifts.length))
   return (
     <>
       <div>두근두근, 랜덤 선물 고르기.</div>
@@ -270,6 +272,14 @@ const RandomGift = () => {
         {gifts[idx].coupangUrl.map((x) => (
           <iframe src={`${x}`} width="120" height="240" scrolling="no"></iframe>
         ))}
+      </div>
+      <div
+        onClick={() => {
+          setIdx(getRandomIndex(gifts.length))
+        }}
+      >
+        {" "}
+        다시 뽑기{" "}
       </div>
       <div>
         "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를
