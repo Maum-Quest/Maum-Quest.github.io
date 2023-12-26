@@ -6,6 +6,12 @@ interface Answer {
   level: number
 }
 
+type FourType = "A" | "B" | "C" | "D"
+export interface FourTypeAnswer extends Answer {
+  type: FourType
+}
+
+
 type PersonalityType = "Lovely" | "Bright" | "Cool" | "Dark" | "Serious"
 type PersonalityResult =  "BB" | "CC" | "DD" | "LL" | "SS" | "BL" | "CL" | "DL" | "LS" | "BC" | "BD" | "BS" | "CD" | "CS" | "DS"
 
@@ -13,10 +19,24 @@ export interface PersonalityAnswer extends Answer {
   type: PersonalityType | PersonalityType[]
 }
 
+const FOUR_TYPE = ["A", "B", "C", "D"] as FourType[]
 
 class Quest {
   static getContent() {
     return {}
+  }
+
+  static getFourTypeResult(selectedAnswers: FourTypeAnswer[]): FourType {
+    const count: Record<FourType, number> = { A: 0, B: 0, C: 0, D: 0 }
+    selectedAnswers.forEach(answer => {
+      count[answer.type] += answer.level
+    })
+    return FOUR_TYPE.reduce<FourType>((prev, curr) => {
+      if (count[prev] < count[curr]) {
+        return curr
+      }
+      return prev
+    }, "A")
   }
 
   static getPersonalityResult(selectedAnswers: PersonalityAnswer[]): PersonalityResult {
