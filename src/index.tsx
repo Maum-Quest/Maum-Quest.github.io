@@ -6,6 +6,7 @@ import App from "./App"
 import RandomGift from "./presentation/questForm/RandomGift"
 import reportWebVitals from "./reportWebVitals"
 import Main from "./presentation/component/Main"
+import FourColorTest from "./presentation/questForm/FourColorTest"
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "pick-gift-random",
         element: <RandomGift />,
+      },
+      {
+        path: "four-color-test",
+        element: <FourColorTest />,
       },
     ],
   },
