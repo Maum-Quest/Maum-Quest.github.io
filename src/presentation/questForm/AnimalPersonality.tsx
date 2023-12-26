@@ -12,7 +12,7 @@ const AnimalPersonality = () => {
   const [result, setResult] = useState("")
   useEffect(() => {
     if (idx === data.length) {
-      setResult(QuestService.getResult(userAnswers))
+      setResult(QuestService.getPersonalityResult(userAnswers))
     }
   }, [idx])
   return (

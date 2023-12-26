@@ -19,7 +19,7 @@ class Quest {
     return {}
   }
 
-  static getResult(selectedAnswers: PersonalityAnswer[]): PersonalityResult {
+  static getPersonalityResult(selectedAnswers: PersonalityAnswer[]): PersonalityResult {
     const count: Record<PersonalityType, number> = {
       "Lovely": 0,
       "Bright": 0,
