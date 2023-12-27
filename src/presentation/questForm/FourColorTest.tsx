@@ -62,6 +62,14 @@ const FourColorTest = () => {
             }}
           ></div>
           <p>{result?.description}</p>
+          <div
+            onClick={() => {
+              setIdx(0)
+              setUserAnswers([])
+            }}
+          >
+            테스트 다시하기
+          </div>
         </>
       )}
     </div>
