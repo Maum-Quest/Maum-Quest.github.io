@@ -17,10 +17,10 @@ const FourColorTest = () => {
     }
   }, [idx])
   return (
-    <div className="Quest-body">
+    <div className="quest-body">
       {idx < questions.length ? (
         <>
-          <div>{`${idx + 1}/${questions.length}`}</div>
+          <div className="index">{`${idx + 1}/${questions.length}`}</div>
           <div className="question">{questions[idx].question}</div>
           <div>
             {questions[idx].answers.map((answer) => {

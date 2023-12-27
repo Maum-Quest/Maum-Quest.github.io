@@ -1,0 +1,21 @@
+.quest-body {
+  max-width: 728px;
+  width: 80%;
+}
+
+.index {
+  margin: 0.5rem;
+  text-align: left;
+}
+
+.question {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 1.5rem;
+}
+
+.answer {
+  margin-top: 0.5rem;
+  border: 1px solid #000;
+  padding: 0.5rem;
+}
