@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { data } from "../../domain/repository/FourColorTest"
-import QuestService, { FourTypeAnswer } from "../../domain/entity/Quest"
+import QuestService, {
+  FourTypeAnswer,
+  FourTypeResult,
+} from "../../domain/entity/Quest"
 import "./FourColorTest.css"
 
 const FourColorTest = () => {
@@ -10,10 +13,18 @@ const FourColorTest = () => {
     setIdx((prevIdx) => prevIdx + 1)
   }
   const [userAnswers, setUserAnswers] = useState<FourTypeAnswer[]>([])
-  const [result, setResult] = useState("")
+  const [result, setResult] = useState<FourTypeResult>()
   useEffect(() => {
     if (idx === questions.length) {
-      setResult(QuestService.getFourTypeResult(userAnswers))
+      const selectedType = QuestService.getFourTypeResult(userAnswers)
+      setResult(
+        results.reduce((prev, curr) => {
+          if (curr.type === selectedType) {
+            return curr
+          }
+          return prev
+        }, results[0])
+      )
     }
   }, [idx])
   return (
@@ -42,16 +53,9 @@ const FourColorTest = () => {
           </div>
         </>
       ) : (
-        <div className="Quest-result">
-          <p>
-            {userAnswers.map(
-              (answer) => `
-              type: ${answer.content}, level: ${answer.level}
-              \n .
-              `
-            )}
-          </p>
-          <p>{result}</p>
+        <div className="quest-result">
+          <p>{result?.content}</p>
+          <p>{result?.description}</p>
         </div>
       )}
     </div>

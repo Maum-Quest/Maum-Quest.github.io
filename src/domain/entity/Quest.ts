@@ -6,11 +6,19 @@ interface Answer {
   level: number
 }
 
+interface Result {
+  content: string
+  type: string
+  description: string
+}
+
 type FourType = "A" | "B" | "C" | "D"
 export interface FourTypeAnswer extends Answer {
   type: FourType
 }
-
+export interface FourTypeResult extends Result {
+  type: FourType
+}
 
 type PersonalityType = "Lovely" | "Bright" | "Cool" | "Dark" | "Serious"
 type PersonalityResult =  "BB" | "CC" | "DD" | "LL" | "SS" | "BL" | "CL" | "DL" | "LS" | "BC" | "BD" | "BS" | "CD" | "CS" | "DS"
