@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { data } from "../../domain/repository/FourColorTest"
 import QuestService, {
   FourTypeAnswer,
-  FourTypeResult,
+  FourColorTypeResult,
 } from "../../domain/entity/Quest"
 import "./FourColorTest.css"
 
@@ -13,7 +13,7 @@ const FourColorTest = () => {
     setIdx((prevIdx) => prevIdx + 1)
   }
   const [userAnswers, setUserAnswers] = useState<FourTypeAnswer[]>([])
-  const [result, setResult] = useState<FourTypeResult>()
+  const [result, setResult] = useState<FourColorTypeResult>()
   useEffect(() => {
     if (idx === questions.length) {
       const selectedType = QuestService.getFourTypeResult(userAnswers)
@@ -53,10 +53,16 @@ const FourColorTest = () => {
           </div>
         </>
       ) : (
-        <div className="quest-result">
+        <>
           <p>{result?.content}</p>
+          <div
+            className="color-box"
+            style={{
+              background: `linear-gradient(#FFF, ${result?.colorCode} 90%)`,
+            }}
+          ></div>
           <p>{result?.description}</p>
-        </div>
+        </>
       )}
     </div>
   )

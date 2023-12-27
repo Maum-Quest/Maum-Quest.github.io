@@ -16,8 +16,9 @@ type FourType = "A" | "B" | "C" | "D"
 export interface FourTypeAnswer extends Answer {
   type: FourType
 }
-export interface FourTypeResult extends Result {
+export interface FourColorTypeResult extends Result {
   type: FourType
+  colorCode: string
 }
 
 type PersonalityType = "Lovely" | "Bright" | "Cool" | "Dark" | "Serious"
