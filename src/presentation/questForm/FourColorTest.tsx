@@ -61,7 +61,7 @@ const FourColorTest = () => {
               background: `linear-gradient(#FFF, ${result?.colorCode} 90%)`,
             }}
           ></div>
-          <p>{result?.description}</p>
+          <p className="result-text">{result?.description}</p>
           <div
             className="restart-link"
             onClick={() => {
