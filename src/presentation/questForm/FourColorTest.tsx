@@ -63,6 +63,7 @@ const FourColorTest = () => {
           ></div>
           <p>{result?.description}</p>
           <div
+            className="restart-link"
             onClick={() => {
               setIdx(0)
               setUserAnswers([])
