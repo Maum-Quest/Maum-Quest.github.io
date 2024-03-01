@@ -124,12 +124,12 @@ const questions = [
 
 const results = [
   {
-    content: "연한 장미빛의 분홍",
+    content: "연한 장미빛",
     type: "A" as const,
     colorCode: "#FBC3CD",
     description: "따뜻하고 친근한 성격,\n'이해심 깊고 부드러움을 지니고 있습니다.\n\n타인과의 조화를 중요시하며 포근한 분위기를 선호합니다.\n아주 섬세하면서도 자상한 면이 있습니다.",
   },{
-    content: "석양같이 밝게 빛나는 노랑",
+    content: "밝게 빛나는 햇빛",
     type: "B" as const,
     colorCode: "#FFDD00",
     description: "긍정적이고 활기찬 성격,\n열정적이며 자유로운 영혼을 지니고 있습니다.\n\n새로운 경험을 즐기며 삶을 밝게 바라봅니다.\n소통과 사회적인 활동을 중요시하는 편입니다.",
@@ -139,7 +139,7 @@ const results = [
     colorCode: "#132D09",
     description: "신중하고 안정된 성격,\n자연과 조용한 환경을 즐기며 평온함을 중요시합니다.\n\n깊이 있는 사고를 가지고 있으며,\n미적 감각과 예술적인 면을 갖추고 있습니다.",
   },{
-    content: "진한 밤하늘 색 남색",
+    content: "밤하늘을 닮은 남색",
     type: "D" as const,
     colorCode: "#161B36",
     description: "차분하면서도 신비로운 성격,\n자기 주관이 뚜렷하며 독립심이 강합니다.\n\n감수성이 풍부하고 심오한 생각을 자주 합니다.\n타고난 리더십과 결단력이 있습니다.",
